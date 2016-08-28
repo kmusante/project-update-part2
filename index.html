@@ -8,11 +8,28 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="main.css">
   </head>
+  <script>
+  /*
+   * Open the drawer when the menu ison is clicked.
+   */
+  var menu = document.querySelector('#menu');
+  var main = document.querySelector('main');
+  var drawer = document.querySelector('.nav');
+
+  menu.addEventListener('click', function(e) {
+    drawer.classList.toggle('open');
+    e.stopPropagation();
+  });
+  main.addEventListener('click', function() {
+    drawer.classList.remove('open');
+  });
+
+</script>
   <body>
 
     <header class="header">
-      <div class="hamburger">
-        <p>&#9776;</p>
+      <div class="hamburger" id="menu">
+        &#9776;
       </div> 
       <div class="header__inner">
         <img class="header__logo" src="images/city.png" alt="iconic view of a cityscape">
